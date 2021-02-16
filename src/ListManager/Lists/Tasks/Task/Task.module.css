@@ -1,0 +1,41 @@
+.Li {
+	list-style: none;
+	color: var(--primary--text);
+	background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.05));
+	text-align: left;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+}
+
+.Checkbox {
+	margin-right: 10px;
+	opacity: 0.1;
+	height: 18px;
+	width: 18px;
+	color: transparent;
+}
+
+.Checkbox:hover {
+	cursor: pointer;
+}
+
+.CheckboxChecked {
+	height: 18px;
+	width: 18px;
+	align-items: center;
+	background-color: (var(--primary--text));
+	margin-right: 10px;
+	outline: none;
+	color: black;
+	font-size: 16px;
+	text-align: center;
+	display: flex;
+	padding-left: 2px;
+	border: none;
+}
+
+.Checked {
+	text-decoration: line-through;
+	text-decoration-color: var(--bg--color);
+}

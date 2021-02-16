@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    /* UI Colors */
+    --primary--text: #f8a1d1;
+    --color--primary--dark: #b34180;
+    --color--primary--light: #e36bae;
+    --color--white: rgb(232, 240, 254);
+    --color--primary--hover: hsl(235, 44%, 51%);
+    --bg--color: #822659;
+    /* --color--primary--active: hsl(var(--primary-hue), 84%, 30%); */
 }
+html {
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg--color);
+    padding: 0;
+    color: #161d6f;
+    background: linear-gradient(45deg, var(--bg--color), var( --primary--text));
+}
+
+.kropki {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/* #161d6f - kolor czarny tekst 
+#98ded9 - ciemno zielony
+#c7ffd8 - jasno zielony
+#f6f6f6 - bialy
+hsl(235, 44%, 51%) - czcionka hover */

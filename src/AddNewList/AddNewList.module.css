@@ -1,0 +1,40 @@
+.Input {
+    outline: none;
+    border: none;
+    width: 10%;
+    height: 22px;
+    background: var(--primary--text);
+    margin-bottom: 10px;
+    display: flex;
+    margin-left: 20px;
+    justify-content: left;
+    border-radius: 5px;
+    padding-left: 5px;
+    background: linear-gradient(30deg, var(--primary--text), white);
+    position: relative;
+}
+
+.Input:focus {
+    background: linear-gradient(30deg, var(--primary--text), white);
+}
+
+.Button {
+    border: none;
+    /* border-radius: 50%; */
+    outline: none;
+    background-color: rgba(0, 0 ,0, 0.01);
+    font-size: 30px;
+    position: relative;
+    top: -40px;
+    left: -580px;
+
+}
+
+.Button:hover {
+    cursor: pointer;
+}
+
+::placeholder {
+    opacity: 1;
+    color: black;
+}
