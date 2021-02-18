@@ -1,7 +1,7 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import classes from "../Main/Main.module.css";
 import Header from "../Header/Header";
-import AddNewList from "../AddNewList/AddNewList";
+import { AddNewList } from "../AddNewList/AddNewList";
 
 class Main extends Component {
 

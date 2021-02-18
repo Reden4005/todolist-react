@@ -1,12 +1,12 @@
 import React from "react";
-import { Lists } from "../../Lists/Lists";
+import { Lists } from "../Lists";
 import classes from "../List/List.module.css";
 
 const list = (props) => {
     return (
         <div className={classes.Lists}>
-            {props.title.map((title, index) => (
-                <Lists  key={index} title={title.name}/> 
+            {props.lists.map((title, index) => (
+                <Lists  key={index} title={title.listName} lists={props.lists}/> 
             ))}
         </div>
     );

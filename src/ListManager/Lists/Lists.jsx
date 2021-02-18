@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import classes from "../Lists/Lists.module.css";
 import Tasks from "./Tasks/Tasks";
 
-let LISTS = [{listTitle: "", name: null}];
+
+// let LISTS = [{listTitle: "", name: null}];
 
 class Lists extends Component {
     state = {
@@ -30,8 +31,12 @@ class Lists extends Component {
             task: ""
         });
         
-        LISTS.push(...this.state.tasks);
-        console.log(LISTS, "list");
+        // LISTS.push(...this.state.tasks);
+        const find = this.props.lists.find(list => list.listName === this.state.listTitle);
+        if (this.state.task) {
+            find.tasks.push(this.state.task);
+        }
+        console.log( "list", find, this.props.lists);
         
     }
 
@@ -40,7 +45,7 @@ class Lists extends Component {
             <div className={classes.Lists}>
                 <form>
                     <p className={classes.P}>{this.props.title}</p>
-                    <Tasks tasks={this.state.tasks} key={this.props.title} listTitle={this.props.title} list={LISTS}/>
+                    <Tasks tasks={this.state.tasks} key={this.props.title + Math.random()} listTitle={this.props.title} list={this.props.lists}/>
                     <input autoComplete="off" 
                         name="task" 
                         className={classes.Input} 
@@ -54,4 +59,4 @@ class Lists extends Component {
     }
 };
 
-export { Lists, LISTS };
+export { Lists };

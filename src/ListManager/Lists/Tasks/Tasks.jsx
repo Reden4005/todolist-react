@@ -1,21 +1,29 @@
-import React from "react";
+import React, { Component } from "react";
 import Task from "./Task/Task";
 
-const tasks = (props) => {
-    return (
-	 	<div>	
-		 	{
-			 props.list.filter(list => (list.listTitle === props.listTitle)) 
-				 		.map((task, index) => (
-					        <ul>
-						    	<Task key={index} task={task.name}/>
-						 	</ul>
+class Tasks extends Component {
+	
+ 	render() {
+ 	if(this.props.tasks.length !== 0) {
+		  this.taskToRender = this.props.list.find(list => list.listName === this.props.listTitle).tasks
+							 	.map((task, index) => (
+							 		<ul>
+							 			<Task key={index} task={task}/>
+							 		</ul>
 					 	)
-			 	)
-		 	}			 
-	 	</div>
-	 	);
-		 
+			 	);
+	 }
+	 else this.taskToRender =  
+	 <ul>
+	 	{/* <Task key="first" task={null}/> */}
+  	</ul>;
+	
+        return (
+			 <div>	
+			 	{this.taskToRender}			 
+			 </div>
+	 	); 
+    	}
 };
 
-export default tasks;
+export default Tasks;
