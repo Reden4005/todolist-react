@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import classes from "../Lists/Lists.module.css";
 import Tasks from "./Tasks/Tasks";
 
-
-// let LISTS = [{listTitle: "", name: null}];
-
 class Lists extends Component {
     state = {
         listTitle: "",
@@ -31,32 +28,37 @@ class Lists extends Component {
             task: ""
         });
         
-        // LISTS.push(...this.state.tasks);
         const find = this.props.lists.find(list => list.listName === this.state.listTitle);
         if (this.state.task) {
             find.tasks.push(this.state.task);
         }
-        console.log( "list", find, this.props.lists);
-        
+        this.mainInput.value = "";
     }
 
     render() {
         return(
             <div className={classes.Lists}>
-                <form>
+                <div className={classes.ListHeader}>
+                    <button type="button" className={classes.Button + " " + classes.ButtonDelList}>-</button>
                     <p className={classes.P}>{this.props.title}</p>
-                    <Tasks tasks={this.state.tasks} key={this.props.title + Math.random()} listTitle={this.props.title} list={this.props.lists}/>
+                </div>
+                <form>
+                    <Tasks tasks={this.state.tasks} 
+                        key={this.props.title} 
+                        listTitle={this.props.title} 
+                        list={this.props.lists}/>
                     <input autoComplete="off" 
                         name="task" 
                         className={classes.Input} 
                         placeholder="new task..." 
-                        onChange={this.addTaskHandler}>
+                        onChange={this.addTaskHandler}
+                        ref={(ref) => this.mainInput= ref}>
                     </input>
                     <button className={classes.Button} onClick={this.confirmAddTaskHandler} type="submit">»</button>
                 </form>
             </div>
         );
     }
-};
+}
 
 export { Lists };

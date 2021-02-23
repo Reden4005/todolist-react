@@ -1,18 +1,12 @@
-import React, { Component } from "react";
-import classes from "../Main/Main.module.css";
+import React from "react";
 import Header from "../Header/Header";
 import { AddNewList } from "../AddNewList/AddNewList";
 
-class Main extends Component {
+const main = () => (
+    <> 
+        <Header />
+        <AddNewList />
+    </>
+);
 
-    render() {
-        return(
-            <div className={classes.Main}> 
-                <Header />
-                <AddNewList />
-            </div>
-        );
-    }
-};
-
-export default Main;
+export default main;
