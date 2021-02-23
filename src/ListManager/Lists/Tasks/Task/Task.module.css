@@ -14,6 +14,7 @@
 	height: 18px;
 	width: 18px;
 	color: transparent;
+	flex-grow: 1;
 }
 
 .Checkbox:hover {
@@ -33,9 +34,33 @@
 	display: flex;
 	padding-left: 2px;
 	border: none;
+	
 }
 
 .Checked {
 	text-decoration: line-through;
 	text-decoration-color: var(--bg--color);
+	flex-grow: 100;
+}
+
+.Check {
+	flex-grow: 100;
+}
+.DelBtn {
+	margin-right: 0;
+	/* opacity: 0.1; */
+	height: 18px;
+	width: 18px;
+	color: black;
+	flex-grow: 1;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	align-items: center;
+	display: flex;
+}
+
+.DelBtn:hover{
+	cursor: pointer;
 }

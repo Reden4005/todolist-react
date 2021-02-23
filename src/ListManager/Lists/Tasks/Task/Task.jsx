@@ -6,9 +6,23 @@ class Task extends Component {
         checked: false
     };
 
+    /**
+     * 
+     * @param {Event} event 
+     */
+    deleteTask(event) {
+        // eslint-disable-next-line no-debugger
+        debugger;
+        this.props.delTask(this.props.taskName);
+        event.preventDefault();
+    }
+
+    deleteTaskHandler = this.deleteTask.bind(this);
+
     lineTrought = (event) => {
         event.preventDefault();
         this.setState({checked: !this.state.checked});
+        console.log(event);
     }
     render() { 
         return (
@@ -16,10 +30,11 @@ class Task extends Component {
                 <button type="checkbox" 
                     className={!this.state.checked ? classes.Checkbox : classes.CheckboxChecked} 
                     onClick={this.lineTrought}>🗸</button>
-                <li className={this.state.checked ? classes.Checked : null}>{this.props.task}</li>
+                <li className={this.state.checked ? classes.Checked : classes.Check}>{this.props.taskName}</li>
+                <button type="button" onClick={this.deleteTaskHandler} name={this.props.taskName} className={classes.DelBtn}>🗑</button>
             </div>
         );
     }
-};
+}
 
 export default Task;

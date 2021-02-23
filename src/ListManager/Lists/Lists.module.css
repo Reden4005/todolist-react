@@ -14,7 +14,8 @@
     color: var(--primary--text);
     margin: 10px 0;
     text-transform: capitalize;
-    
+    justify-items: center;
+    margin: auto;
 }
 
 .Input {
@@ -48,4 +49,14 @@
 ::placeholder {
     opacity: 1;
     color: black;
+}
+
+.ButtonDelList{
+    color: peru;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.ListHeader {
+    display: flex;
 }
