@@ -11,8 +11,6 @@ class Task extends Component {
      * @param {Event} event 
      */
     deleteTask(event) {
-        // eslint-disable-next-line no-debugger
-        debugger;
         this.props.delTask(this.props.taskName);
         event.preventDefault();
     }

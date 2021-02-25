@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import classes from "../AddNewList/AddNewList.module.css";
-import List from "../ListManager/Lists/List/List";
-
+import Lists from "../ListManager/Lists/Lists";
+import InputWithSubmitButton from "../UI/InputWithSubmitButton/InputWithSubmitButton";
 
 
 class AddNewList extends Component {
@@ -34,11 +33,12 @@ class AddNewList extends Component {
     render() {
         return( 
             <>
-                <form>
-                    <input autoComplete="off" type="text" name="listTitle" placeholder="New list's title..." className={classes.Input} value={this.state.listTitle} onChange={this.addTitleHandler} ></input>
-                    <button className={classes.Button} type="submit" onClick={this.sumbitListTitleHandler} >»</button>
-                </form> 
-                <List lists={this.objectWithList} />
+                <InputWithSubmitButton name="listTitle" 
+                    placeholder="New list's title..."
+                    value={this.state.listTitle}
+                    changed={this.addTitleHandler}
+                    clicked={this.sumbitListTitleHandler} />
+                <Lists lists={this.objectWithList} />
             </>
         );
     }

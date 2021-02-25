@@ -1,0 +1,37 @@
+.InputWithButton {
+	color: black;
+	position: relative;
+	display: flex;
+}
+
+.Input {
+	outline: none;
+	border: none;
+	width: 9rem;
+	height: 22px;
+	background: var(--primary--text);
+	margin-left: 12px;
+	border-radius: 5px;
+	padding-left: 5px;
+	background: linear-gradient(30deg, var(--primary--text), white);
+	margin-right: 10px;
+	align-self: center;
+}
+
+.Button {
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0 ,0, 0.01);
+    font-size: 27px;
+	align-self: center;
+	margin-bottom: 5px;
+}
+
+.Button:hover {
+    cursor: pointer;
+}
+
+::placeholder {
+    opacity: 1;
+    color: black;
+}

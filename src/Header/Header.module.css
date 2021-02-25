@@ -4,21 +4,27 @@
     width: 100vw;
     margin: 20px;
     position: relative;
+    justify-content: space-between;
 }
 
 h1 {
     color: var(--primary--text);
-    margin-right: 80vw;
 }
 
 
 .Kropki {
     position: absolute;
     left: -20vw;
-    top: -65vh;
+    top: -20vw;
     overflow: hidden;
     opacity: 0.1;
     animation: rotate 160s linear infinite;
+    width: 40vw;
+    height: 40vw;
+}
+
+.KropkiWithoutSpinning{
+    animation: none;
 }
 
 @keyframes rotate {
@@ -28,9 +34,9 @@ h1 {
 
 .Kolko {
     position: absolute;
-    width: 600px;
-    left: 900px;
-    top: -50px;
+    width: 40vw;
+    left: 50vw;
+    top: 10vh;
     opacity: 0.1;
     overflow: hidden;
 

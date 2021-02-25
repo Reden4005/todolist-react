@@ -14,6 +14,21 @@
     position: relative;
 }
 
+.InputWithButton {
+    display: inline-table;
+}
+
+@media (max-width: 500px) {
+    .Input {
+        width: 25%;
+    }
+
+    .Button {
+        /* top: 0;
+        left: 0; */
+    }
+}
+
 .Input:focus {
     background: linear-gradient(30deg, var(--primary--text), white);
 }
@@ -24,7 +39,7 @@
     outline: none;
     background-color: rgba(0, 0 ,0, 0.01);
     font-size: 30px;
-    position: relative;
+    /* position: relative; */
     top: -40px;
     left: -580px;
 
