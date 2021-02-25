@@ -1,21 +1,10 @@
 .Lists {
-    width: 15%;
-    background: rgba(0, 0 ,0, 0.20);
-    background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.09));
-    min-height: 50%;
-    /* border: 1px solid var(--primary--text); */
-    border-radius: 5px;
+    display: flex;
+    width: 85%;
+    background-color: var(--bg-color);
     margin: 20px;
-    position: relative;
-}
-
-.P {
-    font-weight: bold;
-    color: var(--primary--text);
-    margin: 10px 0;
-    text-transform: capitalize;
-    justify-items: center;
-    margin: auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .Input {
@@ -27,7 +16,6 @@
     margin-bottom: 10px;
     margin-right: 10px;
     border-radius: 5px;
-    padding-left: 10px;
     background: linear-gradient(30deg, var(--primary--text), white);
     
 }
@@ -49,14 +37,4 @@
 ::placeholder {
     opacity: 1;
     color: black;
-}
-
-.ButtonDelList{
-    color: peru;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.ListHeader {
-    display: flex;
 }

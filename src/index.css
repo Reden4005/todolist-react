@@ -14,38 +14,16 @@
     --bg--color: #822659;
     /* --color--primary--active: hsl(var(--primary-hue), 84%, 30%); */
 }
+
 html {
     width: 100vw;
     height: 100vh;
-    background: var(--bg--color);
     padding: 0;
-    color: #161d6f;
+    overflow:scroll;
     background: linear-gradient(45deg, var(--bg--color), var( --primary--text));
+    
 }
 
-.Kropki {
-    position: absolute;
-    left: -20vw;
-    top: -65vh;
-    overflow: hidden;
-    opacity: 0.1;
-    animation: rotate 160s linear infinite;
-}
-
-@keyframes rotate {
-    from {transform: rotate(0deg)}
-    to {transform: rotate(360deg);}
-}
-
-.Kolko {
-    position: absolute;
-    width: 600px;
-    left: 900px;
-    top: -50px;
-    opacity: 0.1;
-    overflow: hidden;
-
-}
 /* #161d6f - kolor czarny tekst 
 #98ded9 - ciemno zielony
 #c7ffd8 - jasno zielony
