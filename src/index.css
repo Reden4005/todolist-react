@@ -20,6 +20,7 @@ html {
     padding: 0;
     overflow: scroll;
     background: linear-gradient(45deg, var(--bg--color), var( --primary--text));
+    
 }
 
 /* #161d6f - kolor czarny tekst 
