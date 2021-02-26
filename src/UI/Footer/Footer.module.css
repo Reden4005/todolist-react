@@ -1,0 +1,21 @@
+.Footer {
+	display: flex;
+	color: var(--bg--color);
+	position: absolute;
+	margin-top: 80vh;
+	flex-direction: column;
+	width: 100vw;
+}
+
+.FooterName {
+	font-size: 20px;
+	font-weight: bold;
+	text-shadow: 1px -1px var(--primary--text);
+}
+
+.FooterLink {
+	font-size: 14px;
+	text-decoration: none;
+	color: var(--primary--text);
+	text-shadow: 1px -1px var(--bg--color);
+}

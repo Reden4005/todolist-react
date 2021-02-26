@@ -3,7 +3,6 @@
     background: rgba(0, 0 ,0, 0.20);
     background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.09));
     min-height: 50%;
-    /* border: 1px solid var(--primary--text); */
     border-radius: 5px;
     margin: 20px;
     position: relative;
@@ -29,17 +28,13 @@
     border-radius: 5px;
     padding-left: 10px;
     background: linear-gradient(30deg, var(--primary--text), white);
-    
 }
 
 .Button {
     border: none;
-    /* border-radius: 50%; */
     outline: none;
     background-color: rgba(0, 0 ,0, 0.01);
     font-size: 30px;
-    
-
 }
 
 .Button:hover {

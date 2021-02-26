@@ -4,7 +4,7 @@ import Task from "./Task/Task";
 class Tasks extends Component {
 
     delTask(taskToDel) {
-        const foundListName = this.props.tasks.find(task => task.name === taskToDel) //undefined?
+        const foundListName = this.props.tasks.find(task => task.name === taskToDel)
             .listTitle;
 
         const foundList = this.props.list.find(list => list.listName === foundListName);
@@ -23,8 +23,7 @@ class Tasks extends Component {
                     <ul>
                         <Task key={index} taskName={taskName} delTask={this.delTask.bind(this)}/>
                     </ul>
-                )
-                );
+                ));
         }
         else this.taskToRender = <ul></ul>;
 

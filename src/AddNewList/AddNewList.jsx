@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Lists from "../ListManager/Lists/Lists";
 import InputWithSubmitButton from "../UI/InputWithSubmitButton/InputWithSubmitButton";
 
-
 class AddNewList extends Component {
     state = { 
         list: [],
@@ -33,7 +32,8 @@ class AddNewList extends Component {
     render() {
         return( 
             <>
-                <InputWithSubmitButton name="listTitle" 
+                <InputWithSubmitButton 
+                    name="listTitle" 
                     placeholder="New list's title..."
                     value={this.state.listTitle}
                     changed={this.addTitleHandler}
@@ -45,3 +45,4 @@ class AddNewList extends Component {
 }
 
 export { AddNewList };
+

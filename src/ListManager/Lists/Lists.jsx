@@ -8,7 +8,9 @@ class Lists extends Component {
         event.preventDefault();
         
         const listToDelete = this.props.lists.find(list => list.listName === event.target.name);
+
         const indexToDelete = this.props.lists.indexOf(listToDelete);
+
         if (listToDelete.tasks.length !== 0) {
             listToDelete.tasks.splice(0, listToDelete.tasks.length);
             console.log(listToDelete.tasks);
@@ -18,8 +20,8 @@ class Lists extends Component {
         console.log(this.props.lists);
         
         this.forceUpdate(); 
-        console.log(listToDelete, "del", indexToDelete);
     };
+    
     render() {
         return (
             <div className={classes.Lists}>

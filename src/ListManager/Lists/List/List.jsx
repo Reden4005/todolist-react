@@ -8,15 +8,11 @@ class List extends Component {
         listTitle: "",
         tasks: [],
         task: "",
-        
         lists: this.props.lists
-
     }
-    // componentDidMount() {
        
-
     addTaskHandler = (event) => {
-        this.setState({  task: event.target.value, listTitle: this.props.title });
+        this.setState({ task: event.target.value, listTitle: this.props.title });
     }
 
     confirmAddTaskHandler = (event) => {
@@ -24,7 +20,6 @@ class List extends Component {
         
         this.setState({
             tasks: [
-            
                 {
                     listTitle: this.state.listTitle,
                     name: this.state.task
@@ -42,7 +37,7 @@ class List extends Component {
     }
 
     render() {
-        return(
+        return (
             <div className={classes.Lists}>
                 <div className={classes.ListHeader}>
                     <button name={this.props.title} 

@@ -11,8 +11,7 @@ h1 {
     color: var(--primary--text);
 }
 
-
-.Kropki {
+.Dots {
     position: absolute;
     left: -20vw;
     top: -20vw;
@@ -23,7 +22,7 @@ h1 {
     height: 40vw;
 }
 
-.KropkiWithoutSpinning{
+.DotsWithoutSpinning{
     animation: none;
 }
 
@@ -32,12 +31,11 @@ h1 {
     to {transform: rotate(360deg);}
 }
 
-.Kolko {
+.Circle {
     position: absolute;
     width: 40vw;
     left: 50vw;
     top: 10vh;
     opacity: 0.1;
     overflow: hidden;
-
 }
