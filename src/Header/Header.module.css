@@ -1,14 +1,14 @@
 .Header {
     display: flex;
     text-align: center;
-    width: 100vw;
-    margin: 20px;
+    margin: 20px 0 20px 20px;
     position: relative;
     justify-content: space-between;
 }
 
 h1 {
     color: var(--primary--text);
+    text-shadow: 2px -1px var(--bg--color);
 }
 
 .Dots {
@@ -33,7 +33,7 @@ h1 {
 
 .Circle {
     position: absolute;
-    width: 40vw;
+    width: 30vw;
     left: 50vw;
     top: 10vh;
     opacity: 0.1;
