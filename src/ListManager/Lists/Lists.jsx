@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { List } from "./List/List";
 import classes from "../Lists/Lists.module.css";
+import ListsStorage from "../../Data/ListsStorage";
 
 class Lists extends Component {
 
@@ -18,18 +19,19 @@ class Lists extends Component {
         this.props.lists.splice(indexToDelete, 1);
         
         console.log(this.props.lists);
-        
+        ListsStorage.removeList(event.target.name);
         this.forceUpdate(); 
     };
     
     render() {
         return (
             <div className={classes.Lists}>
-                {this.props.lists.map((title, index) => (
+                {this.props.lists.map(list => (
                     <List 
                         clicked={this.deleteList} 
-                        key={index} 
-                        title={title.listName} 
+                        key={list.listID}
+                        name={list.listID} 
+                        title={list.listName} 
                         lists={this.props.lists}/> 
                 ))}
             </div>

@@ -22,11 +22,11 @@ class Header extends Component {
                     src={dots} 
                     alt="dots" 
                     onClick={this.stopSpinning} 
-                    class={this.state.isSpinning ? classes.Dots : classes.Dots + " " + classes.DotsWithoutSpinning}></img>
+                    className={this.state.isSpinning ? classes.Dots : classes.Dots + " " + classes.DotsWithoutSpinning}></img>
                 <img 
                     src={circle} 
                     alt="circle" 
-                    class={classes.Circle}></img>
+                    className={classes.Circle}></img>
             </div>
         );
     }
