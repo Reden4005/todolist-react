@@ -4,9 +4,6 @@ import InputWithSubmitButton from "../UI/InputWithSubmitButton/InputWithSubmitBu
 import ListsStorage from "../Data/ListsStorage";
 import ListsData from "../Data/ListsService";
 
-//const listData = new ListsData();
-//const ListsFromStorage = new ListsStorage();
-
 class DashBoard extends Component {
     state = { 
         listTitle: "",
@@ -15,7 +12,9 @@ class DashBoard extends Component {
     
     componentDidMount(){
         ListsData.getLists().then(lists => {
-            this.setState({lists});
+            if (lists.length !== 0) {
+                this.setState({lists});
+            }
         });
     }
     
@@ -29,10 +28,8 @@ class DashBoard extends Component {
         if(this.state.lists) {
             ListsData.getLists().then(lists => {
                 this.setState({lists});
-                console.log(lists);
             });
         }
-        //this.actualLists = ListsData.getLists();
     } 
     render() {
         return( 

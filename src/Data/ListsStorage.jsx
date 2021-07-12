@@ -11,12 +11,12 @@ class ListsStorage extends Component {
     constructor(listName) {
         super();
         let lists = localStorage.getItem("lists");
-        if (lists == null) {
-            console.log("list empty, importing...");
-            this.addNewListToStorage(listName, "");
+        if (listName === undefined) {
+            return;
+        } else if (lists) {
+            this.refreshLists(listName);
         } else {
-            console.log(listName, "second");
-            this.refreshLists(listName, "");
+            this.addNewListToStorage(listName);
         }
     }
     
@@ -30,6 +30,7 @@ class ListsStorage extends Component {
         ];
         localStorage.setItem("lists", JSON.stringify(this.lists));
     }   
+
     refreshLists(listName) {
         let actualLists = JSON.parse(localStorage.getItem("lists"));
         actualLists.push({
@@ -39,13 +40,14 @@ class ListsStorage extends Component {
         });
         localStorage.setItem("lists", JSON.stringify(actualLists));
     }   
-    static addNewTaskToStorage(listName, listID, taskName) {
+
+    addNewTaskToStorage(listName, taskName) {
         let actualLists = JSON.parse(localStorage.getItem("lists"));
         let choosenList = actualLists.filter(list => list.listName === listName);
         choosenList[0].tasks.push(
             {
                 listName: listName,
-                listID: this.listId,
+                
                 taskId: IdGenerator(),
                 taskName: taskName
             });
@@ -53,7 +55,7 @@ class ListsStorage extends Component {
         localStorage.setItem("lists", JSON.stringify(actualLists));
     }
 
-    static removeTaskFromList(taskIdToRemove) {
+    removeTaskFromList(taskIdToRemove) {
         let actualLists = JSON.parse(localStorage.getItem("lists"));
 
         actualLists.map(list => list.tasks.filter(task => {
@@ -68,18 +70,12 @@ class ListsStorage extends Component {
         ));
     }
 
-    static removeList(listName) {
+    removeList(listId) {
         let actualLists = JSON.parse(localStorage.getItem("lists"));
-
-        actualLists.map(list => {
-            if (list.listName === listName) {
-                let index = actualLists.indexOf(list);
-                actualLists.splice(index, 1);
-                console.log(list, "list", list.listName, index);
-            }
-            return localStorage.setItem("lists", JSON.stringify(actualLists));
-        });
+        let refreshedLists = actualLists.filter(list => list.listId !== listId);
+        return localStorage.setItem("lists", JSON.stringify(refreshedLists));
     }
+    
 }
 
 export default ListsStorage;

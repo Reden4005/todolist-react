@@ -6,14 +6,15 @@ import ListsStorage from "../../../Data/ListsStorage";
 import ListsData from "../../../Data/ListsService";
 
 class List extends Component {
+   
+    storage = new ListsStorage();
+
     state = {
         listTitle: "",
         tasks: [],
         task: "",
         lists: this.props.lists
     }
-    
-    
 
     addTaskHandler = (event) => {
         this.setState({ task: event.target.value, listTitle: this.props.title });
@@ -33,28 +34,10 @@ class List extends Component {
             task: ""
         });
         
-        //const localStr = JSON.parse(localStorage.getItem(`${this.state.listTitle}`));
-        // console.log(localStr);
-        // if (this.state.task) {
-        //     //let addTask = localStr.tasks.push(this.state.task);
-        //     //calStorage.setItem(localStr, JSON.stringify(addTask));
-        //     const tester = JSON.stringify(this.state.tasks);
-        //     localStorage.setItem(`${this.state.listTitle}`, tester);
-        //     console.log(localStorage.getItem(tester,`${this.state.listTitle}`));
-        // }
-        // const test = localStr.find(list => list.listName === this.state.listTitle);
-        // console.log(test, "local");
-        // if (this.state.task) {
-        //     test.tasks.push(this.state.task);
-        //     localStorage.setItem("lists", JSON.stringify(test));
-        // }
-
-        
-        // const find = this.props.lists.find(list => list.listName === this.state.listTitle);
         if (this.state.task) {
-            // find.tasks.push(this.state.task);
             ListsData.addTasks(this.props.name, this.state.task);
-            ListsStorage.addNewTaskToStorage(this.state.listTitle, this.state.task);
+          
+            this.storage.addNewTaskToStorage(this.state.listTitle, this.state.task);
         }
         this.mainInput.value = "";
     }
@@ -63,7 +46,7 @@ class List extends Component {
         return (
             <div className={classes.Lists}>
                 <div className={classes.ListHeader}>
-                    <button name={this.props.title} 
+                    <button name={this.props.name} 
                         onClick={this.props.clicked} 
                         type="button" 
                         className={classes.Button + " " + classes.ButtonDelList}>-</button>

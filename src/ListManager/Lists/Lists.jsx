@@ -4,22 +4,20 @@ import classes from "../Lists/Lists.module.css";
 import ListsStorage from "../../Data/ListsStorage";
 
 class Lists extends Component {
-
+    constructor() {
+        super();
+        this.storage = new ListsStorage();
+    }
     deleteList = (event) => {
         event.preventDefault();
         
-        const listToDelete = this.props.lists.find(list => list.listName === event.target.name);
-
+        const listToDelete = this.props.lists.find(list => list.name === event.target.name);
+        
         const indexToDelete = this.props.lists.indexOf(listToDelete);
 
-        if (listToDelete.tasks.length !== 0) {
-            listToDelete.tasks.splice(0, listToDelete.tasks.length);
-            console.log(listToDelete.tasks);
-        }
         this.props.lists.splice(indexToDelete, 1);
         
-        console.log(this.props.lists);
-        ListsStorage.removeList(event.target.name);
+        this.storage.removeList(event.target.name);
         this.forceUpdate(); 
     };
     

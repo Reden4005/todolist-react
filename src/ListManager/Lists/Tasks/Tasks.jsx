@@ -4,7 +4,8 @@ import ListsStorage from "../../../Data/ListsStorage";
 import ListData from "../../../Data/ListsService";
 
 class Tasks extends Component {
-
+    storage = new ListsStorage();
+    
     delTask(taskToDel) {
         const foundListName = this.props.tasks.find(task => task.name === taskToDel)
             .listTitle;
@@ -16,7 +17,7 @@ class Tasks extends Component {
         foundList.tasks.splice(foundTaskIdxInList, 1);
 
         this.forceUpdate();
-        ListsStorage.removeTaskFromList(taskToDel);
+        this.storage.removeTaskFromList(taskToDel);
     }
 
     
@@ -34,7 +35,7 @@ class Tasks extends Component {
         // }
         // else 
         this.taskToRender = <ul></ul>;
-        console.log(this.actualListsWithTasks, "to");
+       
         return (
             <div>	
                 {this.taskToRender}			 

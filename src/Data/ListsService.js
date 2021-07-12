@@ -17,13 +17,13 @@ class ListsData {
         const actualLists = JSON.parse(localStorage.getItem("lists"));
 
         let refreshList = actualLists.map(list => list.tasks);
-        console.log(refreshList);
+        
         return refreshList;
     }
     static addTasks(listID, taskName) {
         const actualLists = JSON.parse(localStorage.getItem("lists"));
-        const test = actualLists.filter(list => listID === list.listId)[0].tasks.push(taskName);
-        console.log(test);
+        // const test = actualLists.filter(list => listID === list.listId)[0].tasks.push(taskName);
+       
         return actualLists;
     }
 	
