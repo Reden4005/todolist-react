@@ -2,21 +2,22 @@ import React, { Component } from "react";
 import classes from "../List/List.module.css";
 import Tasks from "../Tasks/Tasks";
 import InputWithSubmitButton from "../../../UI/InputWithSubmitButton/InputWithSubmitButton";
+import ListsStorage from "../../../Data/ListsStorage";
+import ListsData from "../../../Data/ListsService";
 
 class List extends Component {
+   
+    storage = new ListsStorage();
+
     state = {
         listTitle: "",
         tasks: [],
         task: "",
-        
         lists: this.props.lists
-
     }
-    // componentDidMount() {
-       
 
     addTaskHandler = (event) => {
-        this.setState({  task: event.target.value, listTitle: this.props.title });
+        this.setState({ task: event.target.value, listTitle: this.props.title });
     }
 
     confirmAddTaskHandler = (event) => {
@@ -24,7 +25,6 @@ class List extends Component {
         
         this.setState({
             tasks: [
-            
                 {
                     listTitle: this.state.listTitle,
                     name: this.state.task
@@ -34,22 +34,23 @@ class List extends Component {
             task: ""
         });
         
-        const find = this.props.lists.find(list => list.listName === this.state.listTitle);
         if (this.state.task) {
-            find.tasks.push(this.state.task);
+            ListsData.addTasks(this.props.name, this.state.task);
+          
+            this.storage.addNewTaskToStorage(this.state.listTitle, this.state.task);
         }
         this.mainInput.value = "";
     }
 
     render() {
-        return(
+        return (
             <div className={classes.Lists}>
                 <div className={classes.ListHeader}>
-                    <button name={this.props.title} 
+                    <button name={this.props.name} 
                         onClick={this.props.clicked} 
                         type="button" 
                         className={classes.Button + " " + classes.ButtonDelList}>-</button>
-                    <p className={classes.P}>{this.props.title}</p>
+                    <p className={classes.P} name={this.props.name}>{this.props.title}</p>
                 </div>
                 <Tasks tasks={this.state.tasks} 
                     key={this.props.title} 

@@ -20,7 +20,7 @@ class Task extends Component {
     lineTrought = (event) => {
         event.preventDefault();
         this.setState({checked: !this.state.checked});
-        console.log(event);
+       
     }
     render() { 
         return (
